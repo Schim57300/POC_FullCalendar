@@ -5,7 +5,17 @@ import {Component, OnInit, ElementRef} from '@angular/core';
 @Component({
     moduleId: module.id,
     selector: 'my-app',
-    templateUrl: './app.component.html',
+    template: `
+        <div id="main-wrapper">
+            <div id="body-content">
+                <div id="content">
+                    <div>
+                        <p-schedule [options]="fullCalendarOption" [events]="events" [header]="header" [editable]="true"></p-schedule>
+                    </div>
+                </div>
+            </div>
+        </div>
+    `,
 })
 export class AppComponent {
 

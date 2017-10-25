@@ -37,7 +37,7 @@ var AppComponent = (function () {
         core_1.Component({
             moduleId: module.id,
             selector: 'my-app',
-            templateUrl: './app.component.html',
+            template: "\n        <div id=\"main-wrapper\">\n            <div id=\"body-content\">\n                <div id=\"content\">\n                    <div>\n                        <p-schedule [options]=\"fullCalendarOption\" [events]=\"events\" [header]=\"header\" [editable]=\"true\"></p-schedule>\n                    </div>\n                </div>\n            </div>\n        </div>\n    ",
         }),
         __metadata("design:paramtypes", [core_1.ElementRef])
     ], AppComponent);
