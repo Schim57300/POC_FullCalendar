@@ -11,15 +11,35 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var AppComponent = (function () {
-    function AppComponent() {
+    function AppComponent(_elRef) {
+        this._elRef = _elRef;
+        this.events = [];
     }
+    AppComponent.prototype.ngAfterViewInit = function () {
+        jQuery(this._elRef.nativeElement).find('.fc-day-header').each(function () {
+            $(this).html($(this).text().substring(0, 2));
+        });
+        jQuery(this._elRef.nativeElement).find('.fc-prev-button span').html('&laquo;');
+        jQuery(this._elRef.nativeElement).find('.fc-next-button span').html('&raquo;');
+        jQuery(this._elRef.nativeElement).find('.fc-today').attr('day-number', new Date().getDate());
+    };
+    AppComponent.prototype.ngOnInit = function () {
+        this.fullCalendarOption = {
+            firstDay: 1,
+        };
+        this.header = {
+            left: 'prev,next',
+            center: 'title',
+            right: 'prev,next'
+        };
+    };
     AppComponent = __decorate([
         core_1.Component({
             moduleId: module.id,
             selector: 'my-app',
             templateUrl: './app.component.html',
         }),
-        __metadata("design:paramtypes", [])
+        __metadata("design:paramtypes", [core_1.ElementRef])
     ], AppComponent);
     return AppComponent;
 }());

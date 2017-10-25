@@ -12,10 +12,6 @@ var platform_browser_1 = require("@angular/platform-browser");
 var forms_1 = require("@angular/forms");
 var http_1 = require("@angular/http");
 var app_component_1 = require("./app.component");
-require("rxjs/add/operator/map");
-require("rxjs/add/operator/catch");
-require("rxjs/operator/toPromise");
-var timemanagement_component_1 = require("./TimeManagement/timemanagement.component");
 var primeng_1 = require("primeng/primeng");
 var AppModule = (function () {
     function AppModule() {
@@ -23,10 +19,10 @@ var AppModule = (function () {
     AppModule = __decorate([
         core_1.NgModule({
             imports: [_1.BrowserAnimationsModule, platform_browser_1.BrowserModule, forms_1.FormsModule, http_1.HttpModule, forms_1.ReactiveFormsModule,
-                primeng_1.CalendarModule, primeng_1.SelectButtonModule, primeng_1.DataListModule, primeng_1.ScheduleModule, primeng_1.InputSwitchModule, primeng_1.TabViewModule, primeng_1.TabMenuModule, primeng_1.FileUploadModule,
+                primeng_1.CalendarModule, primeng_1.ScheduleModule,
             ],
             declarations: [
-                app_component_1.AppComponent, timemanagement_component_1.TimeManagement
+                app_component_1.AppComponent
             ],
             bootstrap: [app_component_1.AppComponent],
             providers: []
